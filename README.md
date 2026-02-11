@@ -23,7 +23,7 @@ To run tests for this assignment:
 |Test |Command |
 |:---------|:-------------------|
 |gatorgrade|`uv run gatorgrade` |
-|Playwright|`npx playwright test` |
+|Playwright|`npx playwright test`|
 
 ## Evaluating your progress
 

@@ -1,8 +1,19 @@
 ---
-const pageTitle = "Landing";
-import BaseLayout from '../Layouts/BaseLayouts.astro';
+const pageTitle = "Home";
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout pageTitle = {pageTitle}>
-    <!-- astro <slot /> -->
-    Lorem ipsum.
+
+<BaseLayout pageTitle={pageTitle}>
+
+    <section>
+      <h2>Home</h2>
+      <p>
+        Welcome to my homgepage.
+      </p>
+      <img 
+        src="https://via.placeholder.com/300" 
+        alt="Sample project preview image" 
+      />
+    </section>
+
 </BaseLayout>

@@ -1,8 +1,18 @@
 ---
-import BaseLayout from '../Layouts/BaseLayouts.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "About";
 ---
 <BaseLayout pageTitle = {pageTitle}>
-    <!-- astro <slot /> -->
-    Unlorem ipsum.
+
+    <h2>About Me</h2>
+      <p>
+        Welcome to my portfolio website. I am a student passionate about web
+        development and technology.
+      </p>
+      <img 
+        src="https://via.placeholder.com/300" 
+        alt="Sample project preview image" 
+      />
+    </section>
+
 </BaseLayout>
