@@ -2,8 +2,8 @@
 
 | Date              |           |
 |:------------------|:----------|
-| 11 February 2026   | Assigned  |
-| 25 February 2026   | Due       |
+| 11 February 2026  | Assigned  |
+| 25 February 2026  | Due       |
 
 ## Asessment: Styling Pages in Astro
 
