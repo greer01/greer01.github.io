@@ -1,19 +1,62 @@
 ---
 const pageTitle = "Home";
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 
-    <section>
-      <h2>Home</h2>
+  <!--Hero -->
+  <section class="full__purple_band centered container">
+    <h1>Home</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
+    </p>
+  </section>
+
+  <!-- Three column -->
+  <section class="full__three_column gap__3_rem container">
+    <article>
+      <h2>Lorem Ipsum</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </article>
+
+    <article>
+      <h2>Lorem Ipsum</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </article>
+
+    <article>
+      <h2>Lorem Ipsum</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </article>
+  </section>
+
+  <!-- grid for projects? -->
+  <section class="full__three_column gap__3_rem container">
+    <article>
+      <h2>Lorem Ipsum</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </article>
+    <article>
+      <h2>Lorem Ipsum</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </article>
+    <article>
+      <h2>Lorem Ipsum</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </article>
+  </section>
+
+  <!-- Skills/features? -->
+  <section class="full__three_column gap__3_rem container">
+    <img src="https://via.placeholder.com/300" alt="Placeholder feature image" />
+    <article class="span__2_col">
+      <h2>Lorem Ipsum</h2>
       <p>
-        Welcome to my homgepage.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+        Duis aute irure dolor in reprehenderit.
       </p>
-      <img 
-        src="https://via.placeholder.com/300" 
-        alt="Sample project preview image" 
-      />
-    </section>
+    </article>
+  </section>
 
 </BaseLayout>
