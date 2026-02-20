@@ -1,62 +1,78 @@
 ---
-const pageTitle = "Home";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionWrapper from "../components/Section.astro";
+import Card from "../components/Grid.astro";
+import CourseCard from "../components/CourseCard.astro";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle="Home">
 
-  <!--Hero -->
-  <section class="full__purple_band centered container">
-    <h1>Home</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
-    </p>
-  </section>
+  <Hero />
 
-  <!-- Three column -->
-  <section class="full__three_column gap__3_rem container">
-    <article>
-      <h2>Lorem Ipsum</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </article>
+  <SectionWrapper title="Courses" id="courses">
 
-    <article>
-      <h2>Lorem Ipsum</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </article>
+  <div class="courses-grid">
 
-    <article>
-      <h2>Lorem Ipsum</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </article>
-  </section>
+    <CourseCard title="Course 1" />
+    <CourseCard title="Course 2" />
+    <CourseCard title="Course 3" />
+    <CourseCard title="Course 4" />
+    <CourseCard title="Course 5" />
+    <CourseCard title="Course 6" />
 
-  <!-- grid for projects? -->
-  <section class="full__three_column gap__3_rem container">
-    <article>
-      <h2>Lorem Ipsum</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </article>
-    <article>
-      <h2>Lorem Ipsum</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </article>
-    <article>
-      <h2>Lorem Ipsum</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </article>
-  </section>
+  </div>
 
-  <!-- Skills/features? -->
-  <section class="full__three_column gap__3_rem container">
-    <img src="https://via.placeholder.com/300" alt="Placeholder feature image" />
-    <article class="span__2_col">
-      <h2>Lorem Ipsum</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-        Duis aute irure dolor in reprehenderit.
-      </p>
-    </article>
-  </section>
+</SectionWrapper>
+
+  <SectionWrapper title="Projects" id="projects">
+    <div class="grid-4 gap-large">
+
+      <Card title="Lorem Ipsum" text="Lorem Ipsum." />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum." />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum." />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum." />
+
+    </div>
+  </SectionWrapper>
+
+  <SectionWrapper title="Skills" id="skills">
+    <div class="grid-3 gap-large">
+
+      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
+
+    </div>
+  </SectionWrapper>
+
+  <SectionWrapper title="About Me" id="about">
+    <div class="grid-2 gap-large align-center">
+
+      <div>
+        <img 
+          src="https://via.placeholder.com/500"
+          alt="Profile placeholder image"
+        />
+      </div>
+
+      <div>
+        <h3>Lorem Ipsum</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Integer nec odio. Praesent libero.
+        </p>
+
+        <h3>Lorem Ipsum</h3>
+        <p>
+          Sed cursus ante dapibus diam. Sed nisi.
+        </p>
+      </div>
+
+    </div>
+  </SectionWrapper>
 
 </BaseLayout>
