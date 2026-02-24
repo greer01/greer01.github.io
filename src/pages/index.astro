@@ -1,22 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
-import SectionWrapper from "../components/Section.astro";
 import Card from "../components/Grid.astro";
 import CourseCard from "../components/CourseCard.astro";
 import SkillCard from "../components/SkillCard.astro";
+
+const pageTitle = "Home";
 ---
 
-<BaseLayout pageTitle="Home">
+<BaseLayout pageTitle={pageTitle}>
 
-  <Hero />
+  <section id="hero" class="hero">
+    <Hero />
+    <p class="sr-only">Hero section</p>
+  </section>
 
-  <SectionWrapper id="Courses & Projects">
-
-  <div class="work-split">
-
+  <section id="courses-projects">
+    <h2 class="work-header">Courses</h2>
     <div class="work-top">
-      <h2>Courses</h2>
       <div class="courses-grid">
         <CourseCard title="Course 1" />
         <CourseCard title="Course 2" />
@@ -27,48 +28,47 @@ import SkillCard from "../components/SkillCard.astro";
       </div>
     </div>
 
+    <h2 class="work-header">Projects</h2>
     <div class="work-bottom">
-      <h2>Projects</h2>
       <div class="grid-3 gap-large">
-        <Card/>
-        <Card/>
-        <Card/>
+        <Card />
+        <Card />
+        <Card />
       </div>
     </div>
 
-  </div>
+    <p class="sr-only">Courses and projects section</p>
+  </section>
 
-</SectionWrapper>
-
-  <SectionWrapper title="Skills" id="skills">
+  <section id="skills">
+    <h2>Skills</h2>
     <div class="skills-grid">
-    <SkillCard name="Lorem Ipsum" />
-    <SkillCard name="Lorem Ipsum" />
-    <SkillCard name="Lorem Ipsum" />
-    <SkillCard name="Lorem Ipsum" />
-    <SkillCard name="Lorem Ipsum" />
-    <SkillCard name="Lorem Ipsum" />
-    <SkillCard name="Lorem Ipsum" />
-    <SkillCard name="Lorem Ipsum" />
-    <SkillCard name="Lorem Ipsum" />
-    <SkillCard name="Lorem Ipsum" />
-    <SkillCard name="Lorem Ipsum" />
-    <SkillCard name="Lorem Ipsum" />
-  </div>
-  </SectionWrapper>
-
-  <SectionWrapper id="about" title="About">
-  <div class="about-grid">
-    <div class="about-image">
-      <img src="/PlacePicture.png" alt="Your Name" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
     </div>
+    <p class="sr-only">Skills section</p>
+  </section>
 
-    <div class="about-text">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </p>
+  <section id="about">
+    <h2>About</h2>
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="/PlacePicture.png" alt="Your Name" />
+      </div>
+      <div class="about-text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
     </div>
-  </div>
-</SectionWrapper>
+  </section>
 
 </BaseLayout>
