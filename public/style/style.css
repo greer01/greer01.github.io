@@ -23,7 +23,7 @@ body {
 }
 
 header {
-    height: 4rem;
+    height: 3rem;
     display: flex;
     align-items: center;
     border-bottom: 2px solid #ccc;
@@ -63,17 +63,37 @@ main {
 }
 
 section {
-    padding: 4rem 2rem;
+    min-height: 100vh;
+    padding: 3rem 2rem;
     border-bottom: 2px solid #eee;
+    box-sizing: border-box;
+}
+
+section h2 {
+    text-align: center;
 }
 
 section:last-of-type {
     border-bottom: none;
 }
 
-section h2 {
-    margin-bottom: 2rem;
+.work-top h2,
+.work-bottom h2 {
+    margin-bottom: 1.5rem;
     text-align: center;
+}
+
+.work-top,
+.work-bottom {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.work-top > div,
+.work-bottom > div {
+    flex-grow: 1;
 }
 
 .hero {
@@ -132,7 +152,7 @@ section h2 {
 }
 
 .gap-large {
-    gap: 3rem;
+    gap: 1.5rem;
 }
 
 .align-center {
@@ -140,9 +160,17 @@ section h2 {
 }
 
 .card {
-    border: 2px solid #999;
-    padding: 1.5rem;
+    border: 2px solid #000;
     background: #f8f8f8;
+    border-radius: 8px;
+
+    padding: 1.25rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 220px;
 }
 
 .card h3 {
@@ -155,23 +183,48 @@ img {
     display: block;
 }
 
-footer {
-    padding: 2rem;
-    text-align: center;
-    border-top: 2px solid #ccc;
-    background: #f5f5f5;
+/* FOOTER */
+.site-footer {
+  padding: 1rem 0;
+  border-top: 2px solid #000;
 }
 
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-name {
+  margin: 0;
+}
+
+/* Right side squares */
+.footer-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-square {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #000;
+}
+
+/* Courses Section */
 .courses-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: 1.5rem;
 }
 
 .course-card {
     border: 2px solid #999;
-    padding: 1.5rem;
+    padding: 1rem;
     background: #f8f8f8;
 }
 
@@ -200,6 +253,124 @@ footer {
     justify-content: center;
 }
 
+/* SKILLS GRID */
+
+#skills {
+    display: block;  /* lets grid align rows naturally */
+}
+
+#skills h2 {
+    margin-bottom: 2rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;     
+    align-content: space-between; 
+    height: 100%;   
+}
+
+.work-split {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.work-top,
+.work-bottom {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* SKILL CARD */
+.skill-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 2px solid #000;
+  padding: 1rem 1.5rem;
+  background: #fff;
+}
+
+/* Left Square */
+.skill-left {
+  width: 45px;
+  height: 45px;
+  border: 2px solid #000;
+}
+
+/* Middle Label */
+.skill-label {
+  flex: 1;
+  margin: 0 1rem;
+  border: 2px solid #000;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+/* Right Dots */
+.skill-level {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+
+.dot.filled {
+  background: #000;
+}
+
+/* ABOUT SECTION */
+#about .container {
+  display: flex;
+  flex-direction: column;
+}
+
+#about h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  align-items: stretch;
+  margin-top: 3rem;
+}
+
+/* LEFT COLUMN IMAGE */
+.about-image {
+  grid-column: 1 / 2;
+  aspect-ratio: 1 / 1; /* makes it square */
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid #000;
+}
+
+/* RIGHT SIDE TEXT */
+.about-text {
+  grid-column: 2 / 4; /* spans 2 columns */
+  border: 2px solid #000;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+/* screen size adjustments */
 @media screen and (max-width: 767px) {
 
     .hero-grid {
