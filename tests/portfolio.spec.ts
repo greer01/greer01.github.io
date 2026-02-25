@@ -37,13 +37,13 @@ test('has footer', async ({page}) => {
 
 test('has at least one section', async ({page}) => {
   await page.goto(process.env.BASE_URL);
-  const section = page.locator('section');
+  const section = page.locator('section').first();
   await expect(section).not.toBeEmpty();
 });
 
 test('has at least one paragraph', async ({page}) => {
   await page.goto(process.env.BASE_URL);
-  const para = page.locator('p');
+  const para = page.locator('p').first();
   await expect(para).not.toBeEmpty();
 });
 
@@ -55,18 +55,18 @@ test('has a main element', async ({page}) => {
 
 test('has an img element', async ({page}) => {
   await page.goto(process.env.BASE_URL);
-  const img = page.getByRole('img');
+  const img = page.getByRole('img').first();
   await expect(img).not.toBeNull();
 });
 
 test('img element has src attribute', async ({page}) => {
   await page.goto(process.env.BASE_URL);
-  const img = page.locator('img');
+  const img = page.locator('img').first();
   await expect(img).toHaveAttribute('src');
 });
 
 test('img element has alt attribute', async ({page}) => {
   await page.goto(process.env.BASE_URL);
-  const img = page.locator('img');
+  const img = page.locator('img').first();
   await expect(img).toHaveAttribute('alt');
 });
