@@ -1,78 +1,74 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
-import SectionWrapper from "../components/Section.astro";
 import Card from "../components/Grid.astro";
 import CourseCard from "../components/CourseCard.astro";
+import SkillCard from "../components/SkillCard.astro";
+
+const pageTitle = "Home";
 ---
 
-<BaseLayout pageTitle="Home">
+<BaseLayout pageTitle={pageTitle}>
 
-  <Hero />
+  <section id="hero" class="hero">
+    <Hero />
+    <p class="sr-only">Hero section</p>
+  </section>
 
-  <SectionWrapper title="Courses" id="courses">
-
-  <div class="courses-grid">
-
-    <CourseCard title="Course 1" />
-    <CourseCard title="Course 2" />
-    <CourseCard title="Course 3" />
-    <CourseCard title="Course 4" />
-    <CourseCard title="Course 5" />
-    <CourseCard title="Course 6" />
-
-  </div>
-
-</SectionWrapper>
-
-  <SectionWrapper title="Projects" id="projects">
-    <div class="grid-4 gap-large">
-
-      <Card title="Lorem Ipsum" text="Lorem Ipsum." />
-      <Card title="Lorem Ipsum" text="Lorem Ipsum." />
-      <Card title="Lorem Ipsum" text="Lorem Ipsum." />
-      <Card title="Lorem Ipsum" text="Lorem Ipsum." />
-
-    </div>
-  </SectionWrapper>
-
-  <SectionWrapper title="Skills" id="skills">
-    <div class="grid-3 gap-large">
-
-      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
-      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
-      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
-      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
-      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
-      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
-
-    </div>
-  </SectionWrapper>
-
-  <SectionWrapper title="About Me" id="about">
-    <div class="grid-2 gap-large align-center">
-
-      <div>
-        <img 
-          src="https://via.placeholder.com/500"
-          alt="Profile placeholder image"
-        />
+  <section id="courses-projects">
+    <h2 class="work-header">Courses</h2>
+    <div class="work-top">
+      <div class="courses-grid">
+        <CourseCard title="Course 1" />
+        <CourseCard title="Course 2" />
+        <CourseCard title="Course 3" />
+        <CourseCard title="Course 4" />
+        <CourseCard title="Course 5" />
+        <CourseCard title="Course 6" />
       </div>
-
-      <div>
-        <h3>Lorem Ipsum</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Integer nec odio. Praesent libero.
-        </p>
-
-        <h3>Lorem Ipsum</h3>
-        <p>
-          Sed cursus ante dapibus diam. Sed nisi.
-        </p>
-      </div>
-
     </div>
-  </SectionWrapper>
+
+    <h2 class="work-header">Projects</h2>
+    <div class="work-bottom">
+      <div class="grid-3 gap-large">
+        <Card />
+        <Card />
+        <Card />
+      </div>
+    </div>
+
+    <p class="sr-only">Courses and projects section</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Lorem Ipsum" />
+    </div>
+    <p class="sr-only">Skills section</p>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="/PlacePicture.png" alt="Your Name" />
+      </div>
+      <div class="about-text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+  </section>
 
 </BaseLayout>
