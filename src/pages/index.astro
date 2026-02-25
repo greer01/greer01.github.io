@@ -1,14 +1,78 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionWrapper from "../components/Section.astro";
+import Card from "../components/Grid.astro";
+import CourseCard from "../components/CourseCard.astro";
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+<BaseLayout pageTitle="Home">
+
+  <Hero />
+
+  <SectionWrapper title="Courses" id="courses">
+
+  <div class="courses-grid">
+
+    <CourseCard title="Course 1" />
+    <CourseCard title="Course 2" />
+    <CourseCard title="Course 3" />
+    <CourseCard title="Course 4" />
+    <CourseCard title="Course 5" />
+    <CourseCard title="Course 6" />
+
+  </div>
+
+</SectionWrapper>
+
+  <SectionWrapper title="Projects" id="projects">
+    <div class="grid-4 gap-large">
+
+      <Card title="Lorem Ipsum" text="Lorem Ipsum." />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum." />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum." />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum." />
+
+    </div>
+  </SectionWrapper>
+
+  <SectionWrapper title="Skills" id="skills">
+    <div class="grid-3 gap-large">
+
+      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
+      <Card title="Lorem Ipsum" text="Lorem Ipsum" />
+
+    </div>
+  </SectionWrapper>
+
+  <SectionWrapper title="About Me" id="about">
+    <div class="grid-2 gap-large align-center">
+
+      <div>
+        <img 
+          src="https://via.placeholder.com/500"
+          alt="Profile placeholder image"
+        />
+      </div>
+
+      <div>
+        <h3>Lorem Ipsum</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Integer nec odio. Praesent libero.
+        </p>
+
+        <h3>Lorem Ipsum</h3>
+        <p>
+          Sed cursus ante dapibus diam. Sed nisi.
+        </p>
+      </div>
+
+    </div>
+  </SectionWrapper>
+
+</BaseLayout>
