@@ -31,10 +31,35 @@ const pageTitle = "Home";
     <h2 class="work-header">Projects</h2>
     <div class="work-bottom">
       <div class="grid-3 gap-large">
-        <Card />
-        <Card />
-        <Card />
-      </div>
+
+  <!-- CaddySense -->
+  <div class="card">
+    <h3>CaddySense: AI Golf Assistant</h3>
+    <p>
+      Developed an AI-powered golf caddy tool that provides strategic game recommendations based on course data, player tendencies, and personalization factors.
+    </p>
+    <p><strong>Tech:</strong> Python, AI Modeling</p>
+  </div>
+
+  <!-- Golf NN -->
+  <div class="card">
+    <h3>Golf Tournament Prediction Model</h3>
+    <p>
+      Built a neural network using PyTorch to predict tournament winners using performance metrics like driving distance and scoring average.
+    </p>
+    <p><strong>Tech:</strong> Python, PyTorch</p>
+  </div>
+
+  <!-- CNN -->
+  <div class="card">
+    <h3>CNN Image Classification</h3>
+    <p>
+      Trained and evaluated ShuffleNet and MobileNet models on CIFAR-10, testing architecture and activation function variations.
+    </p>
+    <p><strong>Tech:</strong> Python, Deep Learning</p>
+  </div>
+
+</div>
     </div>
 
     <p class="sr-only">Courses and projects section</p>
@@ -43,18 +68,21 @@ const pageTitle = "Home";
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills-grid">
-      <SkillCard name="Lorem Ipsum" />
-      <SkillCard name="Lorem Ipsum" />
-      <SkillCard name="Lorem Ipsum" />
-      <SkillCard name="Lorem Ipsum" />
-      <SkillCard name="Lorem Ipsum" />
-      <SkillCard name="Lorem Ipsum" />
-      <SkillCard name="Lorem Ipsum" />
-      <SkillCard name="Lorem Ipsum" />
-      <SkillCard name="Lorem Ipsum" />
-      <SkillCard name="Lorem Ipsum" />
-      <SkillCard name="Lorem Ipsum" />
-      <SkillCard name="Lorem Ipsum" />
+      <SkillCard name="Python" level={2} icon="/Python.png" />
+      <SkillCard name="PyTorch" level={1} icon="PyTorch.jpg" />
+      <SkillCard name="Machine Learning" level={2} icon="MachineLearning.jpg" />
+
+      <SkillCard name="Deep Learning" level={2} icon="DeepLearning.jpg" />
+      <SkillCard name="Data Analysis" level={2} icon="DataAnalysis.png" />
+      <SkillCard name="Data Visualization" level={2} icon="DataVisualization.png"/>
+
+      <SkillCard name="SQL" level={1} icon="SQL.png"/>
+      <SkillCard name="R" level={2} icon="R.png"/>
+      <SkillCard name="Java" level={1} icon="Java.png" />
+
+      <SkillCard name="Problem Solving" level={2} icon="ProblemSolving.jpg"/>
+      <SkillCard name="Statistical Modeling" level={2} icon="StatisticalModeling.png"/>
+      <SkillCard name="Algorithm Design" level={2} icon="AlgorithmDesign.jpg"/>
     </div>
     <p class="sr-only">Skills section</p>
   </section>
@@ -63,10 +91,16 @@ const pageTitle = "Home";
     <h2>About</h2>
     <div class="about-grid">
       <div class="about-image">
-        <img src="/PlacePicture.png" alt="Your Name" />
+        <img src="/ProfilePicture.JPG" alt="Logan Greer" />
       </div>
       <div class="about-text">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>
+          I am a Data Science student at Allegheny College with a strong interest in sports analytics and machine learning. As a member of the college golf team, I am especially passionate about applying data-driven insights to improve performance and decision-making in sports.
+
+          Through my coursework and projects, I have developed experience building neural networks, training deep learning models, and analyzing complex datasets using tools like Python and PyTorch. My work includes projects such as an AI-powered golf caddy and predictive models for tournament outcomes.
+
+          I am always looking to expand my skills and explore new applications of data science, particularly in areas where analytics can create a meaningful competitive advantage.
+        </p>
       </div>
     </div>
   </section>
