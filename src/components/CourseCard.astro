@@ -1,18 +1,18 @@
 ---
-const { title } = Astro.props;
+const { title, description, tags = [] } = Astro.props;
 ---
 
-<article class="course-card">
+<div class="course-card">
 
-  <header class="course-main">
+  <div class="course-main">
     <h3>{title}</h3>
-  </header>
-
-  <div class="course-subgrid">
-    <div class="course-sub">1</div>
-    <div class="course-sub">2</div>
-    <div class="course-sub">3</div>
-    <div class="course-sub">4</div>
+    {description && <p>{description}</p>}
   </div>
 
-</article>
+  <div class="course-subgrid">
+    {tags.map(tag => (
+      <div class="course-sub">{tag}</div>
+    ))}
+  </div>
+
+</div>
