@@ -11,8 +11,14 @@ const { title, description, tags = [] } = Astro.props;
 
   <div class="course-subgrid">
     {tags.map(tag => (
-      <div class="course-sub">{tag}</div>
-    ))}
+  <div class="course-sub">
+    {tag.icon ? (
+      <img src={tag.icon} alt={tag.name} />
+    ) : (
+      <span>{tag.name}</span>
+    )}
+  </div>
+))}
   </div>
 
 </div>

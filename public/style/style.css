@@ -155,7 +155,7 @@ section:last-of-type {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .hero-grid {
@@ -293,20 +293,18 @@ img {
   transition: all 0.2s ease;
 }
 .footer-icons img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  transition: 0.2s ease;
 }
 
 /* HOVER */
 .footer-icons a:hover {
   background: var(--primary);
-  transform: translateY(-3px);
 }
 
-.footer-icons a:hover img {
+[data-theme="dark"] .footer-icons a:hover img {
   filter: brightness(0) invert(1);
 }
+
 .footer-square {
   width: 30px;
   height: 30px;
@@ -327,7 +325,8 @@ img {
 
 /* Top Part */
 .course-main {
-    border: 2px solid #bbb;
+    min-height: 100px;
+    border: none;
     padding: 0.75rem;
     margin-bottom: 0.75rem;
     background: var(--bg-light);
@@ -353,7 +352,7 @@ img {
 .course-sub {
     font-size: 0.7rem;
     padding: 0.25rem;
-    border: 2px solid var(--secondary);
+    border: none;
     background: var(--course-box-bg);
     color: var(--course-box-text);
 
@@ -363,10 +362,23 @@ img {
     justify-content: center;
 }
 
+.course-sub img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
 /* SKILLS GRID */
 
 #skills {
     display: block; 
+}
+
+#skills,
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #skills h2 {
@@ -376,7 +388,7 @@ img {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;     
+    gap: 2rem;     
     align-content: space-between; 
     height: 100%;   
 }
@@ -402,7 +414,7 @@ img {
   justify-content: space-between;
 
   border: 2px solid var(--primary);
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
   background: var(--bg-light);
 }
 
@@ -460,9 +472,9 @@ object-fit: contain;
 .about-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 2rem;
   align-items: stretch;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 
 /* LEFT COLUMN IMAGE */
@@ -482,7 +494,7 @@ object-fit: contain;
 .about-text {
   grid-column: 2 / 4; 
   border: 2px solid var(--primary);
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
   align-items: center;
   background: var(--bg-light);
@@ -500,20 +512,22 @@ object-fit: contain;
   border: 0;
 }
 
+/* TOGGLE CONTAINER */
 .toggle-switch {
   position: relative;
   display: inline-block;
-  width: 50px;
-  height: 26px;
+  width: 55px;
+  height: 28px;
 }
 
+/* HIDE DEFAULT CHECKBOX */
 .toggle-switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* slider background */
+/* SLIDER BACKGROUND */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -521,28 +535,44 @@ object-fit: contain;
   background-color: var(--primary);
   border-radius: 34px;
   transition: 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  font-size: 12px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
 }
 
-/* circle */
+/* CIRCLE */
 .slider::before {
   content: "";
   position: absolute;
-  height: 20px;
-  width: 20px;
+  height: 22px;
+  width: 22px;
   left: 3px;
   bottom: 3px;
   background-color: white;
   border-radius: 50%;
   transition: 0.3s;
+  z-index: 2;
 }
 
-/* when checked */
+/* MOVE CIRCLE */
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+/* CHANGE BACKGROUND WHEN ACTIVE */
 .toggle-switch input:checked + .slider {
   background-color: var(--accent);
 }
 
-.toggle-switch input:checked + .slider::before {
-  transform: translateX(24px);
+/* ICONS */
+.sun,
+.moon {
+  z-index: 1;
+  pointer-events: none;
 }
 
 .toggle-container {

@@ -31,7 +31,10 @@ export default function DarkModeToggle() {
       checked={dark}
       onChange={toggleTheme}
     />
-    <span className="slider"></span>
+    <span className="slider">
+      <span className="sun">🌙</span>
+      <span className="moon">☀</span>
+    </span>
   </label>
 );
 }
