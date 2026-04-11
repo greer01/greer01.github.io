@@ -358,8 +358,27 @@ img {
 
     aspect-ratio: 1 / 1; 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.25rem;
+}
+
+.course-sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.course-label {
+  font-size: 0.65rem;
+  text-align: center;
+}
+
+#skills, #about {
+  min-height: auto;
 }
 
 .course-sub img {
@@ -368,10 +387,33 @@ img {
   object-fit: contain;
 }
 
+.work-bottom {
+  width: 100%;
+  display: block;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
 /* SKILLS GRID */
 
 #skills {
     display: block; 
+}
+
+#skills {
+  padding: 1.5rem 1rem;
+}
+
+.skills-columns {
+  gap: 1rem;
+}
+
+.skill-column {
+  gap: 0.5rem;
 }
 
 #skills,
@@ -409,13 +451,15 @@ img {
 
 /* SKILL CARD */
 .skill-card {
-  display: flex;
+  display: grid;
+  grid-template-columns: 45px 1fr auto;
   align-items: center;
-  justify-content: space-between;
 
   border: 2px solid var(--primary);
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;
   background: var(--bg-light);
+
+  height: 55px; 
 }
 
 .skill-left img {
@@ -433,17 +477,40 @@ object-fit: contain;
 
 /* Middle Label */
 .skill-label {
-  flex: 1;
-  margin: 0 1rem;
-  border: 2px solid var(--primary);
-  padding: 0.5rem 1rem;
-  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.85rem;
 }
 
 /* Right Dots */
-.skill-level {
+.skill-left {
+  width: 35px;
+  height: 35px;
+}
+
+.skills-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  height: 100%;
+}
+
+.skill-column {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 1rem;
+}
+.skill-level {
+  min-width: 55px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.skill-column h3 {
+  text-align: center;
+  color: var(--accent);
 }
 
 .dot {
@@ -579,20 +646,150 @@ object-fit: contain;
     justify-self: end;
 }
 
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--primary);
+  color: white;
+
+  font-size: 20px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#backToTop:hover {
+  background: var(--accent);
+}
+
 @media screen and (max-width: 767px) {
 
-    .hero-grid {
-        grid-template-columns: 1fr;
-        padding: 2rem;
-    }
+  /* HEADER */
+  header {
+    height: auto;
+    padding: 0.75rem 1rem;
+  }
 
-    .grid-2,
-    .grid-3,
-    .grid-4 {
-        grid-template-columns: 1fr;
-    }
+  .header-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "name toggle"
+      "nav nav";
+    align-items: center;
+    gap: 0.75rem;
+  }
 
-    .main-nav a {
-        margin: 0 0.5rem;
-    }
+  .site-name {
+    grid-area: name;
+  }
+
+  .toggle-container {
+    grid-area: toggle;
+    justify-self: end;
+  }
+
+  .main-nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .main-nav a {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  /* HERO */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  /* COURSES */
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-subgrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .project-grid-item .card,
+  .projects-grid .card,
+  .work-bottom .card {
+    width: 100%;
+    min-height: auto;
+  }
+
+  /* SKILLS */
+  .skills-columns {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .about-image {
+    grid-column: auto;
+    width: 100%;
+    aspect-ratio: auto;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .about-text {
+    grid-column: auto;
+    padding: 1rem;
+  }
+
+  /* FOOTER */
+  .footer-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

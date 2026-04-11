@@ -9,16 +9,13 @@ const { title, description, tags = [] } = Astro.props;
     {description && <p>{description}</p>}
   </div>
 
-  <div class="course-subgrid">
-    {tags.map(tag => (
-  <div class="course-sub">
-    {tag.icon ? (
+ <div class="course-subgrid">
+  {tags.map(tag => (
+    <div class="course-sub">
+      <span class="course-label">{tag.name}</span>
       <img src={tag.icon} alt={tag.name} />
-    ) : (
-      <span>{tag.name}</span>
-    )}
-  </div>
-))}
-  </div>
+    </div>
+  ))}
+</div>
 
 </div>
